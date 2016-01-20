@@ -58,8 +58,7 @@ RUN rm -Rf /etc/nginx/conf.d/* && \
 rm -Rf /etc/nginx/sites-available/default && \
 mkdir -p /etc/nginx/ssl/
 
-#ONBUILD means if you extend this dockerfile your 'nginx.conf' will be added automatically
-ONBUILD ADD ./nginx.conf /etc/nginx/sites-available/default.conf
+ADD ./nginx.conf /etc/nginx/sites-available/default.conf
 
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
