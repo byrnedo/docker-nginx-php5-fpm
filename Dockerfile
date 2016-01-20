@@ -60,7 +60,9 @@ mkdir -p /etc/nginx/ssl/
 
 ADD ./nginx.conf /etc/nginx/sites-available/default.conf
 
-RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+RUN rm -f /etc/nginx/sites-enabled/default
+
+RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default
 
 # Supervisor Config
 ADD ./supervisord.conf /etc/supervisord.conf
