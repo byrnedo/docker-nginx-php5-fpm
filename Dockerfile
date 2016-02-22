@@ -73,7 +73,7 @@ ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # Setup Volume
-VOLUME ["/usr/share/nginx/html"]
+#VOLUME ["/usr/share/nginx/html"]
 
 WORKDIR /usr/share/nginx/html
 
