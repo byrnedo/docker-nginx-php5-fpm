@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Display PHP error's or not
-if [[ "$ERRORS" != "1" ]] ; then
+if [[ "$ERRORS" == "1" ]] ; then
   sed -i -e "s/error_reporting =.*=/error_reporting = E_ALL/g" /etc/php5/fpm/php.ini
   sed -i -e "s/display_errors =.*/display_errors = On/g" /etc/php5/fpm/php.ini
 fi
