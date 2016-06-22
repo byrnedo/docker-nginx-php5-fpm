@@ -54,7 +54,7 @@ RUN sed -i -e "s/;listen.mode = 0660/listen.mode = 0750/g" /etc/php/5.6/fpm/pool
 find /etc/php/5.6/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 
 # mycrypt conf
-#RUN php5.6enmod mcrypt
+RUN phpenmod mcrypt
 
 # nginx site conf
 RUN rm -Rf /etc/nginx/conf.d/* && \
