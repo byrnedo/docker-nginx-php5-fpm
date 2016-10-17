@@ -62,21 +62,21 @@ RUN rm -Rf /etc/nginx/conf.d/* && \
 rm -Rf /etc/nginx/sites-available/default && \
 mkdir -p /etc/nginx/ssl/
 
-ADD ./nginx.conf /etc/nginx/sites-available/default.conf
+COPY ./nginx.conf /etc/nginx/sites-available/default.conf
 
 RUN rm -f /etc/nginx/sites-enabled/default
 
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default
 
 # Supervisor Config
-ADD ./supervisord.conf /etc/supervisord.conf
+COPY ./supervisord.conf /etc/supervisord.conf
 
 # Start Supervisord
-ADD ./start.sh /start.sh
+COPY ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # add test PHP file
-ADD ./index.php /usr/share/nginx/html/index.php
+COPY ./index.php /usr/share/nginx/html/index.php
 RUN chown -Rf www-data.www-data /usr/share/nginx/html/
 
 # Expose Ports
