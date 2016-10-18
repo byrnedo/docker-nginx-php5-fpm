@@ -62,7 +62,7 @@ RUN rm -Rf /etc/nginx/conf.d/* && \
 rm -Rf /etc/nginx/sites-available/default && \
 mkdir -p /etc/nginx/ssl/
 
-COPY ./nginx.conf /etc/nginx/sites-available/default.conf
+COPY ./nginx.conf.tmpl /etc/nginx/sites-available/default.conf
 
 RUN rm -f /etc/nginx/sites-enabled/default
 
