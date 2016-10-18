@@ -72,7 +72,7 @@ RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/defau
 COPY ./supervisord.conf /etc/supervisord.conf
 
 # Start Supervisord
-COPY ./cmd.sh /cmd.sh
+COPY ./cmd.sh /
 RUN chmod 755 /cmd.sh
 
 # add test PHP file
