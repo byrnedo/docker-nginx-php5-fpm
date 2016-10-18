@@ -72,8 +72,8 @@ RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/defau
 COPY ./supervisord.conf /etc/supervisord.conf
 
 # Start Supervisord
-COPY ./start.sh /start.sh
-RUN chmod 755 /start.sh
+COPY ./cmd.sh /cmd.sh
+RUN chmod 755 /cmd.sh
 
 # add test PHP file
 COPY ./index.php /usr/share/nginx/html/index.php
@@ -82,4 +82,4 @@ RUN chown -Rf www-data.www-data /usr/share/nginx/html/
 # Expose Ports
 EXPOSE 80
 
-CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "/cmd.sh"]
