@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.3
+FROM ubuntu:14.04.5
 MAINTAINER Donal Byrne <byrnedo@tcd.ie>
 
 # Surpress Upstart errors/warning
