@@ -6,6 +6,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 
 # Let the conatiner know that there is no tty
+ENV ERRORS=0
 ENV DEBIAN_FRONTEND noninteractive
 
 # Update base image
