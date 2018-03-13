@@ -34,6 +34,7 @@ RUN apt-get update && \
                     php5.6-sqlite \
                     php5.6-tidy \
                     php5.6-xmlrpc \
+                    php5.6-xml \
                     php5.6-xsl \
                     php5.6-pgsql \
                     php5.6-mongo \
@@ -49,6 +50,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /usr/share/man/?? && \
     rm -rf /usr/share/man/??_* && \
+    update-alternatives --set php /usr/bin/php5.6 && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN mkdir /opt/lua && \

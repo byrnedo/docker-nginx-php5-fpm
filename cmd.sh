@@ -3,6 +3,7 @@
 set -euo pipefail
 
 NGINX_ROOT=${NGINX_ROOT:=/usr/share/nginx/html}
+PHP_FPM_POOL_CONF=${PHP_FPM_POOL_CONF:-}
 
 # Display PHP error's or not
 if [[ "$ERRORS" == "1" ]] ; then
